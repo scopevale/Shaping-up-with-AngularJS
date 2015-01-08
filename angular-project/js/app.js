@@ -26,7 +26,14 @@
 		
 	});
 	
-	
+  app.controller('GalleryController', function() {
+    this.current = 0;
+    
+    this.setCurrent = function(currentValue) {
+      this.current = currentValue || 0;
+    };
+  });
+                 	
 	var gems = [
 		{
 			name: 'Dodecahedron',
@@ -38,7 +45,19 @@
 			images: {
 				full: 'images/apatite.jpg',
 				thumb: 'images/apatite.jpg'
-			}
+			},
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: 'joe@gmail.com'
+				},
+				{
+					stars: 1,
+					body: "This sucks!",
+					author: 'tim@gmail.com'
+				},				
+			]
 		},
 		{
 			name: 'Pentagonal Gem',
@@ -50,7 +69,19 @@
 			images: {
 				full: 'images/peridot.jpg',
 				thumb: 'images/peridot.jpg'
-			}
+			},
+			reviews: [
+				{
+					stars: 5,
+					body: "WOW what a great Gem!",
+					author: 'jane@gmail.com'
+				},
+				{
+					stars: 1,
+					body: "This Gem is AWESOME!",
+					author: 'tony@gmail.com'
+				},				
+			]
 		}
 	];
 
