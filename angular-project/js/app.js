@@ -13,11 +13,26 @@
 		this.products = gems;
 	});
 
+	app.controller('PanelController', function () {
+		this.tab = 1;
+		
+		this.selectTab = function(setTab) {
+			this.tab = setTab;
+		};
+		
+		this.isSelected = function(checkTab) {
+			return this.tab === checkTab;
+		};
+		
+	});
+	
+	
 	var gems = [
 		{
 			name: 'Dodecahedron',
 			price: 2.95,
 			description: 'Some gemstones have qualities beyond their lustre, beyond their shine. Dodeca is such a gemstone.',
+			shine: 8,
 			canPurchase: true,
 			soldOut: false,
 			images: {
@@ -29,6 +44,7 @@
 			name: 'Pentagonal Gem',
 			price: 6,
 			description: 'A truly superb gemstone, Pentagonal is a real eye catcher!',
+			shine: 4,
 			canPurchase: true,
 			soldOut: false,
 			images: {
